@@ -4,6 +4,7 @@ import { globalStyles } from '@/styles/global'
 
 import logo from '@assets/logo.svg'
 import { Container, Header } from '@styles/pages/app'
+import Link from 'next/link'
 
 globalStyles()
 
@@ -11,7 +12,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Container>
       <Header>
-        <Image src={logo} alt="" />
+        <Link href="/">
+          <Image src={logo} alt="" />
+        </Link>
       </Header>
 
       <Component {...pageProps} />
