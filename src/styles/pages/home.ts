@@ -40,6 +40,14 @@ export const Product = styled(Link, {
     alignItems: 'center',
     justifyContent: 'space-between',
 
+    div: {
+      display: 'flex',
+      alignItems: 'start',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      gap: 5
+    },
+
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
 
     transform: 'translateY(110%)',
@@ -56,6 +64,22 @@ export const Product = styled(Link, {
       fontSize: '$xl',
       fontWeight: 'bold',
       color: '$green300'
+    },
+
+    button: {
+      height: '3rem',
+      width: '3rem',
+      borderRadius: 6,
+      padding: 12,
+      background: '$green500',
+      border: 'none',
+  
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      
+      cursor: 'pointer',
+      color: '$gray100'
     }
   },
 
