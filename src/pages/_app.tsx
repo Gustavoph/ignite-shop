@@ -17,7 +17,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Link href="/">
           <Image src={logo} alt="" />
         </Link>
-        
         <CartModal />
       </Header>
 

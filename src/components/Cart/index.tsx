@@ -1,9 +1,11 @@
-import { Handbag } from 'phosphor-react';
+import { Handbag, X } from 'phosphor-react';
 import { Fragment, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 
 
 import * as S from './styles';
+import Image from 'next/image';
+import shirt1 from '@/assets/shirts/1.png'
 
 export function CartModal() {
   const [isVisible, setIsVisible] = useState(false)
@@ -29,12 +31,35 @@ export function CartModal() {
         <Dialog.Portal>
           <Dialog.Overlay />
           <S.Content>
-            sasasasasa
-            <Dialog.Title />
-            <Dialog.Description />
-            <Dialog.Close onClick={handleCloseModal}>
-              X
-            </Dialog.Close>
+            <S.CloseButton onClick={handleCloseModal}>
+            <X size={24} weight="bold" />
+            </S.CloseButton>
+
+            <S.DialogTitle>
+              Sacola de comprar
+            </S.DialogTitle>
+
+            <section>
+              <S.ProductContainer>
+                <S.ProductImageContainer>
+                  <Image src={shirt1} alt="" width={94} height={94} />
+                </S.ProductImageContainer>
+
+                <div>
+                  <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
+                  <S.ProductPrice>R$ 79,90</S.ProductPrice>
+
+                  <button>Remover</button>
+                </div>
+              </S.ProductContainer>
+
+              <S.ProductFooter>
+                <p>Quantidade <span>3 itens</span></p>
+                <p>Valor total <span>R$270,00</span></p>
+
+                <button>Finalizar compra</button>
+              </S.ProductFooter>
+            </section>
           </S.Content>
         </Dialog.Portal>
       </Dialog.Root>
