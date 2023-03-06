@@ -36,10 +36,36 @@ export function CartModal() {
             </S.CloseButton>
 
             <S.DialogTitle>
-              Sacola de comprar
+              Sacola de compras
             </S.DialogTitle>
 
             <section>
+              <S.ProductContainer>
+                <S.ProductImageContainer>
+                  <Image src={shirt1} alt="" width={94} height={94} />
+                </S.ProductImageContainer>
+
+                <div>
+                  <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
+                  <S.ProductPrice>R$ 79,90</S.ProductPrice>
+
+                  <button>Remover</button>
+                </div>
+              </S.ProductContainer>
+
+              <S.ProductContainer>
+                <S.ProductImageContainer>
+                  <Image src={shirt1} alt="" width={94} height={94} />
+                </S.ProductImageContainer>
+
+                <div>
+                  <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
+                  <S.ProductPrice>R$ 79,90</S.ProductPrice>
+
+                  <button>Remover</button>
+                </div>
+              </S.ProductContainer>
+
               <S.ProductContainer>
                 <S.ProductImageContainer>
                   <Image src={shirt1} alt="" width={94} height={94} />

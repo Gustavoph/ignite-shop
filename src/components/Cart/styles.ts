@@ -29,13 +29,15 @@ export const Content = styled(Dialog.Content, {
   padding: 48,
   boxShadow: '-4px 0px 30px 0px #000000CC',
   '&:focus': { outline: 'none' },
+  overflow: 'auto',
 
   section: {
     display: 'flex',
     alignItems: 'space-between',
     flexDirection: 'column',
     height: '100%',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    gap: 24
   }
 })
 
@@ -50,7 +52,7 @@ export const CloseButton = styled(Dialog.Close, {
 })
 
 export const ProductContainer = styled('div', {
-  height: '5.25rem',
+  height: '5.875rem',
   width: '100%',
   display: 'flex',
   gap: '20px',
@@ -69,7 +71,7 @@ export const ProductContainer = styled('div', {
       textAlign: 'start',
       fontSize: '1rem',
       fontWeight: 'bold',
-      color: '$green500'
+      color: '$green500',
     }
   }
 })
@@ -85,13 +87,55 @@ export const ProductImageContainer = styled('div', {
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
   width: '102px',
-  height: '5.82rem',
+  height: '5.875rem',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
 })
 
 export const ProductFooter = styled('footer', {
+  marginTop: '100%',
+  
+  button: {
+    width: '100%',
+    height: '4.3rem',
+    borderRadius: 8,
+    backgroundColor: '$green500',
+    cursor: 'pointer',
+    
+    color: '$white',
+    fontSize: '$md',
+    fontWeight: 'bold',
+    outline: 'none',
+    border: 'none'
+  },
+
+  'p:nth-child(1)': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    color: '$gray100',
+    fontSize: '1rem',
+
+    span: {
+      fontSize: '$md'
+    },
+
+    marginBottom: 8
+  },
+
+  'p:nth-child(2)': {
+    display: 'flex',
+    fontWeight: 'bold',
+    justifyContent: 'space-between',
+    color: '$gray100',
+    fontSize: '$md',
+
+    span: {
+      fontSize: '$xl'
+    },
+
+    marginBottom: '3.5rem'
+  }
 })
 
 export const ProductName = styled('p', {
