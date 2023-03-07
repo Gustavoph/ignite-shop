@@ -31,61 +31,81 @@ export function CartModal() {
         <Dialog.Portal>
           <Dialog.Overlay />
           <S.Content>
-            <S.CloseButton onClick={handleCloseModal}>
-            <X size={24} weight="bold" />
-            </S.CloseButton>
+            <main>
+              <header>  
+                <S.CloseButton onClick={handleCloseModal}>
+                  <X size={24} weight="bold" />
+                </S.CloseButton>
 
-            <S.DialogTitle>
-              Sacola de compras
-            </S.DialogTitle>
+                <S.DialogTitle>
+                  Sacola de compras
+                </S.DialogTitle>
+              </header>
 
-            <section>
-              <S.ProductContainer>
-                <S.ProductImageContainer>
-                  <Image src={shirt1} alt="" width={94} height={94} />
-                </S.ProductImageContainer>
+              <section>
+                <article>
+                  <S.ProductContainer>
+                    <S.ProductImageContainer>
+                      <Image src={shirt1} alt="" width={94} height={94} />
+                    </S.ProductImageContainer>
 
-                <div>
-                  <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
-                  <S.ProductPrice>R$ 79,90</S.ProductPrice>
+                    <div>
+                      <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
+                      <S.ProductPrice>R$ 79,90</S.ProductPrice>
 
-                  <button>Remover</button>
-                </div>
-              </S.ProductContainer>
+                      <button>Remover</button>
+                    </div>
+                  </S.ProductContainer>
 
-              <S.ProductContainer>
-                <S.ProductImageContainer>
-                  <Image src={shirt1} alt="" width={94} height={94} />
-                </S.ProductImageContainer>
+                  <S.ProductContainer>
+                    <S.ProductImageContainer>
+                      <Image src={shirt1} alt="" width={94} height={94} />
+                    </S.ProductImageContainer>
 
-                <div>
-                  <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
-                  <S.ProductPrice>R$ 79,90</S.ProductPrice>
+                    <div>
+                      <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
+                      <S.ProductPrice>R$ 79,90</S.ProductPrice>
 
-                  <button>Remover</button>
-                </div>
-              </S.ProductContainer>
+                      <button>Remover</button>
+                    </div>
+                  </S.ProductContainer>
+                  
 
-              <S.ProductContainer>
-                <S.ProductImageContainer>
-                  <Image src={shirt1} alt="" width={94} height={94} />
-                </S.ProductImageContainer>
+                  <S.ProductContainer>
+                    <S.ProductImageContainer>
+                      <Image src={shirt1} alt="" width={94} height={94} />
+                    </S.ProductImageContainer>
 
-                <div>
-                  <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
-                  <S.ProductPrice>R$ 79,90</S.ProductPrice>
+                    <div>
+                      <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
+                      <S.ProductPrice>R$ 79,90</S.ProductPrice>
 
-                  <button>Remover</button>
-                </div>
-              </S.ProductContainer>
+                      <button>Remover</button>
+                    </div>
+                  </S.ProductContainer>
 
-              <S.ProductFooter>
-                <p>Quantidade <span>3 itens</span></p>
-                <p>Valor total <span>R$270,00</span></p>
+                  <S.ProductContainer>
+                    <S.ProductImageContainer>
+                      <Image src={shirt1} alt="" width={94} height={94} />
+                    </S.ProductImageContainer>
 
-                <button>Finalizar compra</button>
-              </S.ProductFooter>
-            </section>
+                    <div>
+                      <S.ProductName>Camiseta Beyond the Limits</S.ProductName>
+                      <S.ProductPrice>R$ 79,90</S.ProductPrice>
+
+                      <button>Remover</button>
+                    </div>
+                </S.ProductContainer>
+                </article>
+
+                <S.ProductFooter>
+                  <p>Quantidade <span>3 itens</span></p>
+                  <p>Valor total <span>R$270,00</span></p>
+
+                  <button>Finalizar compra</button>
+                </S.ProductFooter>
+              </section>
+            </main>
           </S.Content>
         </Dialog.Portal>
       </Dialog.Root>

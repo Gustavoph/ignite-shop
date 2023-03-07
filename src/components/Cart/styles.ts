@@ -25,20 +25,35 @@ export const Content = styled(Dialog.Content, {
   transform: 'translate(0, -50%)',
   width: '500px',
   maxWidth: '480px',
-  height: '100%',
+  height: '100vh',
   padding: 48,
   boxShadow: '-4px 0px 30px 0px #000000CC',
   '&:focus': { outline: 'none' },
   overflow: 'auto',
 
-  section: {
-    display: 'flex',
-    alignItems: 'space-between',
-    flexDirection: 'column',
+  main: {
     height: '100%',
-    boxSizing: 'border-box',
-    gap: 24
-  }
+    display: 'flex',
+    flexDirection: 'column',
+
+    header: {
+      width: '100%',
+    },
+
+    section: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'column',
+      boxSizing: 'border-box',
+      height: '100%',
+
+      article: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 24
+      }
+    }
+  },
 })
 
 export const CloseButton = styled(Dialog.Close, {
@@ -94,8 +109,6 @@ export const ProductImageContainer = styled('div', {
 })
 
 export const ProductFooter = styled('footer', {
-  marginTop: '100%',
-  
   button: {
     width: '100%',
     height: '4.3rem',
@@ -107,7 +120,13 @@ export const ProductFooter = styled('footer', {
     fontSize: '$md',
     fontWeight: 'bold',
     outline: 'none',
-    border: 'none'
+    border: 'none',
+  
+    transition: 'background 200ms',
+
+    '&:hover': {
+      background: '$green300'
+    }
   },
 
   'p:nth-child(1)': {
