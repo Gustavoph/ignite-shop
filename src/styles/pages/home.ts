@@ -10,10 +10,9 @@ export const HomeContainer = styled('main', {
   minHeight: 656
 })
 
-export const Product = styled(Link, {
+export const Product = styled('div', {
   background: 'linear-gradient(100deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
-  // padding: '0.25rem',
   cursor: 'pointer',
   position: 'relative',
   overflow: 'hidden',
@@ -40,6 +39,14 @@ export const Product = styled(Link, {
     alignItems: 'center',
     justifyContent: 'space-between',
 
+    div: {
+      display: 'flex',
+      alignItems: 'start',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      gap: 5
+    },
+
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
 
     transform: 'translateY(110%)',
@@ -56,6 +63,28 @@ export const Product = styled(Link, {
       fontSize: '$xl',
       fontWeight: 'bold',
       color: '$green300'
+    },
+
+    button: {
+      height: '3rem',
+      width: '3rem',
+      borderRadius: 6,
+      padding: 12,
+      background: '$green500',
+      border: 'none',
+      zIndex: 99,
+
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      
+      cursor: 'pointer',
+      color: '$gray100',
+
+      '&:disabled': {
+        cursor: 'not-allowed',
+        filter: 'brightness(0.7)'
+      }
     }
   },
 
@@ -66,3 +95,4 @@ export const Product = styled(Link, {
     }
   }
 })
+

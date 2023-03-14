@@ -5,18 +5,17 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { stripe } from "@/lib/stripe";
 import * as S from "@/styles/pages/product";
 import { useRouter } from "next/router";
+import Head from "next/head";
+import { useCart } from "@/hooks/cart";
+import { Product as ProductType } from "@/@types/product";
 
 interface ProductProps {
-  product: {
-    id: string
-    name: string
-    imageUrl: string
-    price: string
-    description: string
-  }
+  product: ProductType
 }
 
 export default function Product({ product }: ProductProps) {
+  const { addCart, productAlreadyInCart } = useCart()
+
   const { isFallback } = useRouter()
 
   if (isFallback) {
@@ -24,20 +23,28 @@ export default function Product({ product }: ProductProps) {
   }
 
   return (
-    <S.ProductContainer>
-      <S.ImageContainer>
-        <Image src={product?.imageUrl} width={520} height={480} alt=""/>
-      </S.ImageContainer>
-      
-      <S.ProductDetails>
-        <h1>{product?.name}</h1>
-        <span>{product?.price}</span>
+    <>
+      <Head>
+        <title>{product.name} | Ignite Shop</title>
+      </Head>
 
-        <p>{product?.description}</p>
+      <S.ProductContainer>
+        <S.ImageContainer>
+          <Image src={product?.imageUrl} width={520} height={480} alt=""/>
+        </S.ImageContainer>
+        
+        <S.ProductDetails>
+          <h1>{product?.name}</h1>
+          <span>{product?.price}</span>
 
-        <button>Comprar Agora</button>
-      </S.ProductDetails>
-    </S.ProductContainer>
+          <p>{product?.description}</p>
+
+          <button onClick={() => addCart(product)} disabled={productAlreadyInCart(product.id)}>
+            {productAlreadyInCart(product.id) ? 'Produto já adicionado ao carrinho' : 'Comprar Agora'}
+          </button>
+        </S.ProductDetails>
+      </S.ProductContainer>
+    </>
   )
 }
 
@@ -67,6 +74,8 @@ export const getStaticProps: GetStaticProps<ProductProps, { id: string }> = asyn
         name: product.name,
         imageUrl: product.images[0],
         description: product.description,
+        defaultPriceId: price.id,
+        priceNumber: price.unit_amount,
         price: new Intl.NumberFormat('pr-BR', {
           style: 'currency',
           currency: 'BRL'
