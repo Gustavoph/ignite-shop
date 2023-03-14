@@ -14,8 +14,26 @@ export const CartButton = styled('button', {
   alignItems: 'center',
   
   cursor: 'pointer',
-  color: '#8D8D99'
+  color: '#8D8D99',
+
+  position: 'relative'
 })
+
+export const CartQuantity = styled('div', {
+  position: 'absolute',
+
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  top: -8,
+  right: -8,
+  color: 'white',
+  background: '$green500',
+  width: 24,
+  height: 24,
+  borderRadius: 999
+})
+
 
 export const Content = styled(Dialog.Content, {
   backgroundColor: '$gray800',
@@ -166,4 +184,11 @@ export const ProductPrice = styled('p', {
   fontSize: '$md',
   color: '$gray100',
   fontWeight: 'bold'
+})
+
+export const EmptyCart = styled('div', {
+  display: 'flex',
+  height: '100%',
+  justifyContent: 'center',
+  alignItems: 'center'
 })

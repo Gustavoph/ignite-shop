@@ -63,10 +63,16 @@ export const ProductDetails = styled('div', {
 
     '&:not(:disabled):hover': {
       backgroundColor: '$green300',
+      filter: 'brightness(0.7)'
+    },
+
+    '&:disabled:hover': {
+      filter: 'brightness(0.7)'
     },
 
     '&:disabled': {
-      backgroundColor: '$green300'
+      backgroundColor: '$green300',
+      cursor: 'not-allowed',
     }
   },
 })

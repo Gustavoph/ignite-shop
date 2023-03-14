@@ -10,10 +10,9 @@ export const HomeContainer = styled('main', {
   minHeight: 656
 })
 
-export const Product = styled(Link, {
+export const Product = styled('div', {
   background: 'linear-gradient(100deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
-  // padding: '0.25rem',
   cursor: 'pointer',
   position: 'relative',
   overflow: 'hidden',
@@ -73,13 +72,19 @@ export const Product = styled(Link, {
       padding: 12,
       background: '$green500',
       border: 'none',
-  
+      zIndex: 99,
+
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       
       cursor: 'pointer',
-      color: '$gray100'
+      color: '$gray100',
+
+      '&:disabled': {
+        cursor: 'not-allowed',
+        filter: 'brightness(0.7)'
+      }
     }
   },
 
@@ -90,3 +95,4 @@ export const Product = styled(Link, {
     }
   }
 })
+
